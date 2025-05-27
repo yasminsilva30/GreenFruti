@@ -1,0 +1,33 @@
+### Criar Pagamento
+POST http://localhost:3000/pagamentos
+Content-Type: application/json
+
+{
+  "pedidoId": 1,
+  "valorPago": 100.60,
+  "formaPagamento": "Cartão de Crédito",
+  "status": "Pendente"
+}
+
+###
+
+### Buscar Pagamento por Pedido
+GET http://localhost:3000/pagamentos/1
+
+###
+
+### Atualizar Pagamento
+PUT http://localhost:3000/pagamentos/1
+Content-Type: application/json
+
+{
+  "valorPago": 98.00,
+  "formaPagamento": "Pix"
+}
+
+###
+
+### Deletar Pagamento
+DELETE http://localhost:3000/pagamentos/1
+
+###
