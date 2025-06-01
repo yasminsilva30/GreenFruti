@@ -32,6 +32,10 @@ npm install swagger-ui-express
 
 npm install --save-dev @types/helmet
 
+npm install bcrypt
+
+npm install --save-dev @types/bcrypt
+
 
 ## Para executar no terminal do VS Code
 
