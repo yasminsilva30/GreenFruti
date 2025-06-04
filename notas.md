@@ -2,8 +2,6 @@
 
 ## Dependências a serem instaladas
 
-cd nest-js
-
 npm install
 
 npm install --save-dev prettier eslint-config-prettier eslint
@@ -40,6 +38,10 @@ npm install --save-dev @types/bcrypt
 ## Para executar no terminal do VS Code
 
 npm run start:dev
+
+ou
+
+npx @nestjs/cli nest start --watch
 
 
 ## Integrantes do Projeto
