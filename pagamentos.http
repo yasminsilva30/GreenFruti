@@ -1,5 +1,6 @@
 ### Criar Pagamento
 POST http://localhost:3000/pagamentos
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -13,11 +14,14 @@ Content-Type: application/json
 
 ### Buscar Pagamento por Pedido
 GET http://localhost:3000/pagamentos/1
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
 
 ###
 
 ### Atualizar Pagamento
 PUT http://localhost:3000/pagamentos/1
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -29,5 +33,7 @@ Content-Type: application/json
 
 ### Deletar Pagamento
 DELETE http://localhost:3000/pagamentos/1
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
 
 ###
