@@ -3,7 +3,7 @@ POST http://localhost:3000/estoques
 Content-Type: application/json
 
 {
-  "frutaId": 1,
+  "produtoId": 1,
   "quantidade": 10
 }
 
