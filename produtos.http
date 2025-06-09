@@ -1,6 +1,6 @@
 ### Criar Produto
 POST http://localhost:3000/produtos
-Authorization: Bearer Authorization: Bearer {{token de acesso}}
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
