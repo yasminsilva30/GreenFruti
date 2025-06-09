@@ -20,15 +20,15 @@ Content-Type: application/json
 
 ### GET todos usuários (precisa do token)
 GET http://localhost:3000/user
-Authorization: Bearer {{access_token}}
+Authorization: Bearer {{token de acesso}}
 
 ### GET usuário por id (precisa do token)
 GET http://localhost:3000/user/1
-Authorization: Bearer {{access_token}}
+Authorization: Bearer {{token de acesso}}
 
 ### Atualizar usuário (precisa do token)
 PATCH http://localhost:3000/user/1
-Authorization: Bearer {{access_token}}
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -37,4 +37,4 @@ Content-Type: application/json
 
 ### Deletar usuário (precisa do token)
 DELETE http://localhost:3000/user/1
-Authorization: Bearer {{access_token}}
+Authorization: Bearer {{token de acesso}}
