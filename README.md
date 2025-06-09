@@ -51,6 +51,9 @@ ou
 npx @nestjs/cli nest start --watch
 
 
-### Favor instalar as dependências ao rodar o projeto
+### Fluxo de funcionamento
 
-É preciso ter node.js para poder rodar o projeto!
+criar user > criar cliente > checar produtos > adicionar itens ao carrinho > realizar pedido > realizar pagamento > avaliar pedido e entrega
+
+Para criar dono de loja, é necessário criar uma loja primeiro
+
