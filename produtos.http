@@ -1,0 +1,42 @@
+### Criar Produto
+POST http://localhost:3000/produtos
+Authorization: Bearer Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
+
+{
+  "nome": "Maçã",
+  "preco": 5,
+  "quantidadeEstoque": 10
+}
+
+###
+
+### Buscar todos os produtos
+GET http://localhost:3000/produtos
+
+###
+
+### Buscar produto por ID
+GET http://localhost:3000/produtos
+
+###
+
+### Atualizar produto
+PUT http://localhost:3000/produtos
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
+
+{
+  "nome": "Maçã Fuji",
+  "preco": 6.00,
+  "quantidadeEstoque": 15
+}
+
+###
+
+### Deletar produto
+DELETE http://localhost:3000/produtos/1
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
+
+###
