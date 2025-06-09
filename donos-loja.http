@@ -1,5 +1,6 @@
 ### Criar DonoLoja
 POST http://localhost:3000/donos-loja
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -11,16 +12,21 @@ Content-Type: application/json
 
 ### Buscar todos os Donos de Loja
 GET http://localhost:3000/donos-loja
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
 
 ###
 
 ### Buscar Dono de Loja por ID
 GET http://localhost:3000/donos-loja/1
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
 
 ###
 
 ### Atualizar Dono de Loja
 PUT http://localhost:3000/donos-loja/1
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -32,5 +38,7 @@ Content-Type: application/json
 
 ### Deletar Dono de Loja
 DELETE http://localhost:3000/donos-loja/1
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
 
 ###
