@@ -1,12 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Injectable, CanActivate, ExecutionContext, ForbiddenException } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { ROLES_KEY } from './roles.decorator';
-import { UserRole } from 'src/user/entities/user.entity';
-
-interface RequestUser {
-  id: number;
-  role: UserRole;
-}
+import { UserRole } from '../user/entities/user.entity';
 
 @Injectable()
 export class RolesGuard implements CanActivate {
@@ -17,23 +14,25 @@ export class RolesGuard implements CanActivate {
       context.getHandler(),
       context.getClass(),
     ]);
-
+    
+    // Se não há roles especificados, permite o acesso
     if (!requiredRoles) {
       return true;
     }
-
-    const { user }: { user: RequestUser } = context.switchToHttp().getRequest();
-
-    if (!user) {
-      throw new ForbiddenException('Usuário não autenticado...');
+    
+    const { user } = context.switchToHttp().getRequest();
+    
+    // Verifica se o usuário existe e detém o papel necessário
+    if (!user || !user.role) {
+      throw new ForbiddenException('Você não tem permissão para acessar este recurso');
     }
 
-    const hasRole = requiredRoles.some((role) => user.role === role);
-
-    if (!hasRole) {
-      throw new ForbiddenException('Usuário não possui permissão suficiente...');
+    const hasPermission = requiredRoles.some(role => user.role === role);
+    
+    if (!hasPermission) {
+      throw new ForbiddenException(`Você precisa ter um dos seguintes perfis: ${requiredRoles.join(', ')}`);
     }
-
+    
     return true;
   }
 }
