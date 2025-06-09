@@ -1,5 +1,12 @@
 # Hortifruti
 
+## Integrantes do Projeto
+#### Alexandre Rodrigues Costa UC23101095
+#### André Luiz Borges Aguiar UC23200389
+#### Artur Braz Lopes UC23102367
+#### Caio Murilo Silva de Oliveira UC23100307
+#### Ester Yasmin Santos Silva UC23102494
+
 ## Dependências a serem instaladas
 
 npm install
@@ -42,14 +49,6 @@ npm run start:dev
 ou
 
 npx @nestjs/cli nest start --watch
-
-
-## Integrantes do Projeto
-#### Alexandre Rodrigues Costa UC23101095
-#### André Luiz Borges Aguiar UC23200389
-#### Artur Braz Lopes UC23102367
-#### Caio Murilo Silva de Oliveira UC23100307
-#### Ester Yasmin Santos Silva UC23102494
 
 
 ### Favor instalar as dependências ao rodar o projeto
