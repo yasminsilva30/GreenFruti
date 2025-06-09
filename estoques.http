@@ -1,5 +1,6 @@
 ### Criar Estoque
 POST http://localhost:3000/estoques
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -21,6 +22,7 @@ GET http://localhost:3000/estoques/1
 
 ### Atualizar Estoque
 PUT http://localhost:3000/estoques/1
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -31,5 +33,7 @@ Content-Type: application/json
 
 ### Deletar Estoque
 DELETE http://localhost:3000/estoques/1
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
 
 ###
