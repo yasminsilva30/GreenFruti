@@ -1,5 +1,6 @@
 ### Criar Loja
 POST http://localhost:3000/lojas
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -23,6 +24,7 @@ GET http://localhost:3000/lojas/1
 
 ### Atualizar Loja
 PUT http://localhost:3000/lojas/1
+Authorization: Bearer {{token de acesso}}
 Content-Type: application/json
 
 {
@@ -36,5 +38,7 @@ Content-Type: application/json
 
 ### Deletar Loja
 DELETE http://localhost:3000/lojas/1
+Authorization: Bearer {{token de acesso}}
+Content-Type: application/json
 
 ###
