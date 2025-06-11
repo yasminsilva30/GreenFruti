@@ -9,6 +9,8 @@
 
 ## Dependências a serem instaladas
 
+cd greenfruti
+
 npm install
 
 npm install --save-dev prettier eslint-config-prettier eslint
@@ -46,14 +48,18 @@ npm install --save-dev @types/bcrypt
 
 npm run start:dev
 
-ou
-
-npx @nestjs/cli nest start --watch
-
 
 ### Fluxo de funcionamento
 
-criar user > criar cliente > checar produtos > adicionar itens ao carrinho > realizar pedido > realizar pagamento > avaliar pedido e entrega
+para todos, é necessário registrar em user.http
 
-Para criar dono de loja, é necessário criar uma loja primeiro
+fluxo cliente (user)
+criar cliente > endereço > checar produtos > adicionar itens ao carrinho > realizar pagamento > acompanhar entrega > avaliar
 
+fluxo motoboy (user)
+motoboy > entrega
+
+fluxo loja (manager)
+criar dono-loja > criar loja > criar produtos > olhar pedidos
+
+admin pode ser utilizado como quiser
