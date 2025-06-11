@@ -12,7 +12,7 @@ import { Pagamento } from './pagamento/entities/pagamento.entity';
 import { Estoque } from './estoque/entities/estoque.entity';
 import { Entrega } from './entrega/entities/entrega.entity';
 import { Avaliacao } from './avaliacao/entities/avaliacao.entity';
-import { Carrinho } from './carrinho/entities/carrinho.entity';
+import { Carrinho, CarrinhoItem } from './carrinho/entities/carrinho.entity';
 import { Endereco } from './endereco/entities/endereco.entity';
 import { User } from './user/entities/user.entity';
 
@@ -53,6 +53,7 @@ import { AuthModule } from './auth/auth.module';
         Entrega,
         Avaliacao,
         Carrinho,
+        CarrinhoItem,
         Endereco,
         User,
       ],
