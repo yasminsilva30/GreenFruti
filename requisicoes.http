@@ -1,0 +1,450 @@
+##### REGISTRO ROLES #####
+
+### Registro de usuário
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "nomeUsuario": "yasminsilva",
+  "nome": "Yasminss",
+  "senha": "321",
+  "email": "yasminsilva@gmail.com"
+}
+
+### Login de usuário
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "nomeUsuario": "yasminsilva",
+  "senha": "321"
+}
+
+### GET todos usuários (precisa do token)
+GET http://localhost:3000/user
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### GET usuário por id (precisa do token)
+GET http://localhost:3000/user/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar usuário (precisa do token)
+PATCH http://localhost:3000/user/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "Cadastro atualizado!"
+}
+
+### Deletar usuário (precisa do token)
+DELETE http://localhost:3000/user/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### DONO-LOJA ######
+
+### Criar DonoLoja
+POST http://localhost:3000/donos-loja
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "Mariana Almeida",
+  "email":"marianaalmeida@gmail.com",
+  "cpf": "123.456.789-00",
+  "senha":"123456"
+}
+
+### Buscar todos os Donos de Loja
+GET http://localhost:3000/donos-loja
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Buscar Dono de Loja por ID
+GET http://localhost:3000/donos-loja/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar Dono de Loja
+PUT http://localhost:3000/donos-loja/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "Maria Alice",
+  "cpf": "987.654.321-00"
+}
+
+### Deletar Dono de Loja
+DELETE http://localhost:3000/donos-loja/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### LOJA ######
+
+### Criar Loja
+POST http://localhost:3000/lojas
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "Loja do Hortifruti",
+  "endereco": "Rua das Frutas, 123",
+  "latitude": 40.7128,
+  "longitude": -74.0060,
+  "dono-lojaId": 1
+}
+
+### Buscar todas as Lojas
+GET http://localhost:3000/lojas
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Buscar Loja por ID
+GET http://localhost:3000/lojas/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar Loja
+PUT http://localhost:3000/lojas/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "HortiMania",
+  "endereco": "Rua da Figueira, 321",
+  "latitude": 40.7128,
+  "longitude": -74.0060
+}
+
+### Deletar Loja
+DELETE http://localhost:3000/lojas/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### PRODUTOS ######
+
+### Criar Produto
+POST http://localhost:3000/produtos
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "lojaId": 1,
+  "nome": "Laranja",
+  "preco": 7,
+  "categoria": "Fruta"
+}
+
+### Buscar todos os produtos
+GET http://localhost:3000/produtos
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Buscar produto por ID
+GET http://localhost:3000/produtos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar produto
+PUT http://localhost:3000/produtos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "Maçã Fuji",
+  "preco": 6.00,
+  "quantidadeEstoque": 15
+}
+
+### Deletar produto
+DELETE http://localhost:3000/produtos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### CLIENTE ######
+
+### Criar Cliente
+POST http://localhost:3000/clientes
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "Pedro Silva",
+  "email": "pedrosilva@google.com",
+  "telefone": "123456789"
+}
+
+### Buscar todos os Clientes
+GET http://localhost:3000/clientes
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Buscar Cliente por ID
+GET http://localhost:3000/clientes/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar Cliente
+PUT http://localhost:3000/clientes/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "Gabriel Barbosa da Silva",
+  "email": "gabigol@google.com",
+  "telefone": "987654321"
+}
+
+### Deletar Cliente
+DELETE http://localhost:3000/clientes/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### ENDEREÇO ######
+
+### Criar Endereço
+POST http://localhost:3000/enderecos
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "clienteId": 1,
+  "rua": "Rua das Frutas, 123",
+  "numero": "100",
+  "bairro": "Centro",
+  "cidade": "São Paulo",
+  "estado": "SP"
+}
+
+### Buscar Endereço do Cliente
+GET http://localhost:3000/enderecos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar Endereço
+PATCH http://localhost:3000/enderecos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "rua": "Rua das Frutas, 456",
+  "numero": "200",
+  "bairro": "Jardim das Flores",
+  "cidade": "São Paulo",
+  "estado": "SP"
+}
+
+### Deletar Endereço
+DELETE http://localhost:3000/enderecos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### CARRINHO ######
+
+### Criar Carrinho
+POST http://localhost:3000/carrinhos
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "clienteId": 1,
+  "produtoId": 1,
+  "quantidade": 3
+}
+
+### Buscar Carrinho do Cliente
+GET http://localhost:3000/carrinhos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Deletar Item do Carrinho
+DELETE http://localhost:3000/carrinho/1/item/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Deletar Carrinho
+DELETE http://localhost:3000/carrinhos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### PAGAMENTO ######
+
+### Criar Pagamento
+POST http://localhost:3000/pagamentos
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "carrinhoId": 1,
+  "metodo": "Cartão de Crédito",
+  "status": "Confirmado"
+}
+
+### Buscar Pagamento pelo seu ID
+GET http://localhost:3000/pagamentos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar Pagamento
+PUT http://localhost:3000/pagamentos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "metodo": "Pix",
+  "status": "Confirmado"
+}
+
+### Deletar Pagamento
+DELETE http://localhost:3000/pagamentos/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### MOTOBOY ######
+
+### Criar Motoboy
+POST http://localhost:3000/motoboys
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "José Oliveira",
+  "telefone": "998877665"
+}
+
+### Buscar todos os Motoboys
+GET http://localhost:3000/motoboys
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Buscar Motoboy por ID
+GET http://localhost:3000/motoboys/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar Motoboy
+PUT http://localhost:3000/motoboys/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nome": "Inácio Silva",
+  "telefone": "40028922"
+}
+
+### Deletar Motoboy
+DELETE http://localhost:3000/motoboys/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### ENTREGA ######
+
+### Criar Entrega
+POST http://localhost:3000/entregas
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "pagamentoId": 1,
+  "motoboyId": 1,
+  "status": "Em trânsito"
+}
+
+### Buscar todas as Entregas
+GET http://localhost:3000/entregas
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Buscar Entrega por ID
+GET http://localhost:3000/entregas/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar Entrega
+PUT http://localhost:3000/entregas/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "status": "Entrega cancelada",
+  "motoboyId": 1,
+  "pagamentoId": 1
+}
+
+### Deletar Entrega
+DELETE http://localhost:3000/entregas/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+
+################################################
+
+###### AVALIAÇÃO ######
+
+### Criar Avaliação
+POST http://localhost:3000/avaliacoes
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "clienteId": 1,
+  "lojaId": 1,
+  "nota": 5,
+  "comentario": "Muito boa a loja!"
+}
+
+### Buscar todas as Avaliações
+GET http://localhost:3000/avaliacoes
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Buscar Avaliação por ID
+GET http://localhost:3000/avaliacoes/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+### Atualizar Avaliação
+PUT http://localhost:3000/avaliacoes/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
+
+{
+  "nota": 4,
+  "comentario": "Ainda é boa, mas pode melhorar."
+}
+
+### Deletar Avaliação
+DELETE http://localhost:3000/avaliacoes/1
+Content-Type: application/json
+Authorization: Bearer {{token de acesso}}
