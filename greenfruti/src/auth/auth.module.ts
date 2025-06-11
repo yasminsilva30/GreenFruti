@@ -6,10 +6,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtStrategy } from './jwt.strategy';
-
+import { RolesGuard } from './roles.guard';
 import { User } from '../user/entities/user.entity';
 import { UserModule } from '../user/user.module';
-
 
 @Module({
   imports: [
@@ -21,8 +20,8 @@ import { UserModule } from '../user/user.module';
       signOptions: { expiresIn: '24h' },
     }),
   ],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy, RolesGuard],
   controllers: [AuthController],
-  exports: [PassportModule, JwtStrategy],
+  exports: [PassportModule, JwtStrategy, RolesGuard],
 })
 export class AuthModule {}
